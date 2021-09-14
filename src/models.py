@@ -27,8 +27,7 @@ class Follower(Base):
     id = Column(Integer, primary_key=True)
     user_from_id = Column(Integer, ForeignKey('user.id'))
     user_to_id = Column(Integer, ForeignKey('user.id'))
-    user = relationship('User'
-    )
+    user = relationship('User')
 
 class Comment(Base):
     __tablename__ = 'comment'
@@ -58,8 +57,6 @@ class Media(Base):
     url = Column(String(250))
     post_id = Column(Integer, ForeignKey('post.id'))
     post = relationship('Post')
-
-
 
     def to_dict(self):
         return {}
